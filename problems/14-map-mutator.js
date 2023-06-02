@@ -18,13 +18,16 @@ mapMutator(arr2, function (el, i) {
 console.log(arr2); // [ 0, 9, 20 ]
 *******************************************************************************/
 
-function mapMutator(array, cb) {
-  // Your code here
-}
+let mapMutator = function(array, cb) {
+
+   for(let i = 0 ; i < array[i]; i++){
+            array[i] = cb(array[i], i)
+   }
+
+   return array
+};
+
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
-try {
-  module.exports = mapMutator;
-} catch(e) {
-  return null;
-}
+module.exports = mapMutator;

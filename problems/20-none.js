@@ -28,13 +28,22 @@ let result4 = none([4, -5, 7, -1], function(n) {
 console.log(result4);   // false
 *******************************************************************************/
 
-function none(array, cb) {
-  // Your code here
-}
+let none = function(array, cb) {
+
+    for (let i = 0; i < array.length; i++){
+        let el = array[i];
+
+        if(cb(el)){
+            return false
+        }
+    }
+return true
+};
+
+
+
+
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
-try {
-  module.exports = none;
-} catch (e) {
-  return null;
-}
+module.exports = none;

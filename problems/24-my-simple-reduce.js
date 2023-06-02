@@ -1,6 +1,6 @@
 /*******************************************************************************
 Write a function `mySimpleReduce` that accepts an array and a callback as arguments.
-The function should mimic the behavior of the built in Array.reduce, utilizing the
+The function should mimic the behavior of the built in Array#reduce, utilizing the
 first element of the array as the default accumulator.
 
 In other words, the function should begin with the first element of the array as
@@ -28,15 +28,25 @@ let result3 = mySimpleReduce([4, 6, 2, 8, 3], function(max, el) {
     }
 });
 console.log(result3); // 8
+
+AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
+- Explain, but don't code, how you would refactor this problem to take in an
+  optional initial accumulator
 *******************************************************************************/
 
-function mySimpleReduce(array, cb) {
-  // Your code here
-}
+let mySimpleReduce = function(array, cb) {
+    let accumulator = array[0];
+        for(let i = 1; i< array.length; i++){
+            let el = array[i];
+            accumulator = cb(accumulator, el)
+        }
+    return accumulator
+};
+
+
+
+
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
-try {
-  module.exports = mySimpleReduce;
-} catch (e) {
-  return null;
-}
+module.exports = mySimpleReduce;

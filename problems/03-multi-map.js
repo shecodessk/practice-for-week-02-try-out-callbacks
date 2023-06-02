@@ -21,13 +21,16 @@ let result3 = multiMap("hi", 5, function(s) {
 console.log(result3); // hi!!!!!
 *******************************************************************************/
 
-function multiMap(val, n, cb) {
-  // Your code here
-}
+let multiMap = function(v, n, cb) {
+  let newValue = 0;
+
+      for(let i = 1; i <= n; i++){
+          newValue = cb(v)
+          v = newValue
+      }
+      
+  return newValue;
+};
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
-try {
-  module.exports = multiMap;
-} catch(e) {
-  return null;
-}
+module.exports = multiMap;

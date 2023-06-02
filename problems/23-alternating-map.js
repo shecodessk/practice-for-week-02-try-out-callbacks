@@ -32,15 +32,29 @@ let whisper = function (s) {
 };
 console.log(alternatingMap(['hEy', 'EVERYone', 'whats', 'uP??'], yell, whisper));
 // [ 'HEY!', '..everyone..', 'WHATS!', '..up??..' ]
+
 *******************************************************************************/
 
-function alternatingMap(array, cb1, cb2) {
-  // Your code here
-}
+
+let alternatingMap = function(array, cb1, cb2) {
+
+        let newArray = [];
+            for(let i = 0; i< array.length; i++){
+                let el = array[i];
+
+                if(i % 2 === 0){
+                    newArray.push(cb1(el))
+                }
+                else{
+                    newArray.push(cb2(el))
+                }
+            }
+
+        return newArray;
+};
+
+
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
-try {
-  module.exports = alternatingMap;
-} catch(e) {
-  return null;
-}
+module.exports = alternatingMap;

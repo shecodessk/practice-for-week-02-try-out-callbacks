@@ -27,13 +27,23 @@ console.log(result4); // true
 
 *******************************************************************************/
 
-function exactly(array, num, cb) {
-  // Your code here
-}
+let exactly = function(array, n, cb) {
+    let count = 0;
+
+    for(let i = 0; i < array.length; i++){
+        let el = array[i];
+
+        if(cb(el) === true){
+            count++
+        }
+    }
+    return (count === n)
+};
+
+
+
+
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
-try {
-  module.exports = exactly;
-} catch(e) {
-  return null;
-}
+module.exports = exactly;

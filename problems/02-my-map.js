@@ -3,7 +3,7 @@ Write a function `myMap` that accepts an array and a callback as arguments.
 The function return an array of new elements obtained by calling the callback on
 each element of the array, passing in the element.
 
-Do not use the built in Array.map
+Do not use the built in Array#map
 
 // Examples
 
@@ -16,13 +16,17 @@ let result2 = myMap(['run', 'Forrest'], function (el) {
 console.log(result2);   // [ 'RUN!', 'FORREST!' ]
 *******************************************************************************/
 
-function myMap(array, cb) {
-    // Your code here
-}
+let myMap = function(array, cb) {
+    let newArray = [];
+
+        for(let i = 0; i < array.length; i++){
+            let el = array[i];
+            newArray.push(cb(el, i , array));
+        }  
+        
+    return newArray
+};
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
-try {
-    module.exports = myMap;
-} catch(e) {
-    return null;
-}
+module.exports = myMap;

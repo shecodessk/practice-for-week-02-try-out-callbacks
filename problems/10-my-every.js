@@ -3,7 +3,7 @@ Write a function `myEvery` that accepts an array and a callback as arguments.
 The function should return a boolean indicating whether or not all elements of
 the array return true when passed into the callback.
 
-Do not use the built in Array.every.
+Do not use the built in Array#every.
 
 Examples:
 
@@ -21,13 +21,21 @@ console.log(myEvery(['book', 'door'], hasO));           // true
 console.log(myEvery(['book', 'door', 'pen'], hasO));    // false
 *******************************************************************************/
 
-function myEvery(array, cb) {
-    // Your code here
-}
+let myEvery = function(array, cb) {
+   
+    for(let i = 0; i < array.length; i++){
+        let el = array[i]
+        if(cb(el) === false){
+            return false
+        }
+    }
+    return true
+};
+
+
+
+
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
-try {
-    module.exports = myEvery;
-  } catch(e) {
-    return null;
-  }
+module.exports = myEvery;

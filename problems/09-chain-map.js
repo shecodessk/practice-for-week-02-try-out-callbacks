@@ -29,13 +29,24 @@ console.log(chainMap(4, square, half));         // 8
 console.log(chainMap(4, half, square));         // 4
 *******************************************************************************/
 
-function chainMap(val, ...callbacks) {
-  // Your code here
-}
+let chainMap = function(v, ...callBacks) {
+    let finalResult = 0;
+        
+        callBacks.map( 
+            (func) => {
+                finalResult = func(v) 
+                v = finalResult;
+        })
+
+   return finalResult
+
+};
+
+//myForEach(['a', 'b', 'c'], function (el, i) {
+   // console.log(el + ' is at index ' + i);
+
+
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
-try {
-  module.exports = chainMap;
-} catch(e) {
-  return null;
-}
+module.exports = chainMap;
